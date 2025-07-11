@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Rewards Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+            color: #ffffff;
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: linear-gradient(to right, #9333ea, #ec4899);
+            text-align: center;
+            padding: 2rem;
+        }
+        .site-logo {
+            height: 8rem;
+            width: auto;
+            margin: 0 auto 1rem;
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(147, 51, 234, 0.7);
+        }
+        header h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            margin: 0;
+        }
+        header p {
+            font-size: 1.25rem;
+            color: #e5e7eb;
+            margin-top: 0.75rem;
+        }
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .section-title h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            color: #d8b4fe;
+        }
+        .section-title p {
+            font-size: 1.125rem;
+            color: #d1d5db;
+            margin-top: 0.5rem;
+        }
+        .game-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        @media (min-width: 768px) {
+            .game-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        .game-card {
+            background: #1f2937;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .game-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(147, 51, 234, 0.7);
+        }
+        .logo-img {
+            height: 7rem;
+            width: auto;
+            margin: 0 auto 1rem;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(147, 51, 234, 0.5);
+        }
+        .game-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+        .game-card h3.blue {
+            color: #60a5fa;
+        }
+        .game-card h3.pink {
+            color: #f472b6;
+        }
+        .game-card h3.purple {
+            color: #c084fc;
+        }
+        .game-card p {
+            color: #d1d5db;
+            margin: 1rem 0;
+        }
+        .game-button {
+            display: inline-block;
+            padding: 0.75rem 1.25rem;
+            border-radius: 0.5rem;
+            color: #ffffff;
+            text-decoration: none;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .game-button.blue {
+            background: #1e3a8a;
+        }
+        .game-button.blue:hover {
+            background: #1e40af;
+            box-shadow: 0 0 15px rgba(236, 72, 153, 0.8);
+        }
+        .game-button.pink {
+            background: #be185d;
+        }
+        .game-button.pink:hover {
+            background: #db2777;
+            box-shadow: 0 0 15px rgba(236, 72, 153, 0.8);
+        }
+        .game-button.purple {
+            background: #6b21a8;
+        }
+        .game-button.purple:hover {
+            background: #7e22ce;
+            box-shadow: 0 0 15px rgba(236, 72, 153, 0.8);
+        }
+        footer {
+            background: #111827;
+            text-align: center;
+            padding: 1.5rem;
+        }
+        footer p {
+            color: #d1d5db;
+            margin: 0;
+        }
+        footer a {
+            color: #d1d5db;
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+        footer a:hover {
+            color: #c084fc;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <img src="https://i.imgur.com/2Ymt94A.png" alt="Game Rewards Hub Logo" class="site-logo">
+        <h1>Game Rewards Hub</h1>
+        <p>Dive into epic adventures with daily free spins, coins, and boosters!</p>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="section-title">
+            <h2>Explore Our Games</h2>
+            <p>Level up your gameplay with exclusive rewards and thrilling challenges!</p>
+        </section>
+
+        <!-- Game List -->
+        <div class="game-grid">
+            <!-- Coin Master -->
+            <div class="game-card">
+                <img src="https://i.imgur.com/P69QXXY.png" alt="Coin Master Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/150?text=Coin+Master';">
+                <h3 class="blue">Coin Master</h3>
+                <p>Spin the wheel, build your village, and raid rivals to rule as the ultimate Coin Master!</p>
+                <a href="Coin Master.html" class="game-button blue">Play Coin Master</a>
+            </div>
+
+            <!-- Crazy Fox -->
+            <div class="game-card">
+                <img src="https://i.imgur.com/i9jxB9a.png" alt="Crazy Fox Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/150?text=Crazy+Fox';">
+                <h3 class="pink">Crazy Fox</h3>
+                <p>Unleash the fun with Crazy Fox! Spin for coins, conquer missions, and win big in events.</p>
+                <a href="Crazy Fox.html" class="game-button pink">Play Crazy Fox</a>
+            </div>
+
+            <!-- Match Master -->
+            <div class="game-card">
+                <img src="https://i.imgur.com/xu0Nnox.png" alt="Match Master Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/150?text=Match+Master';">
+                <h3 class="purple">Match Master</h3>
+                <p>Battle in match-3 showdowns! Use boosters, win trophies, and dominate the leaderboard.</p>
+                <a href="Match Master.html" class="game-button purple">Play Match Master</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Game Rewards Hub | 
+            <a href="#">Privacy</a> | 
+            <a href="#">Terms</a> | 
+            <a href="#">Contact</a>
+        </p>
+    </footer>
+</body>
+</html>
