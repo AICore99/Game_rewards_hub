@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Rewards Hub</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&Audiowide&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="https://i.imgur.com/2Ymt94A.png">
     <style>
         body {
             background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
@@ -72,19 +73,25 @@
             50% { box-shadow: 0 0 25px rgba(147, 51, 234, 1); }
         }
         header h1 {
-            font-family: 'Orbitron', sans-serif;
+            font-family: 'Audiowide', sans-serif;
             font-size: 3rem;
             margin: 0;
-            animation: neonFlicker 4s infinite;
+            color: #ffffff;
+            text-shadow: 
+                0 0 5px #ffffff,
+                0 0 10px #60a5fa,
+                0 0 20px #60a5fa,
+                0 0 30px rgba(147, 51, 234, 0.8);
+            animation: saberGlow 2s ease-in-out infinite;
+        }
+        @keyframes saberGlow {
+            0%, 100% { text-shadow: 0 0 5px #ffffff, 0 0 10px #60a5fa, 0 0 20px #60a5fa, 0 0 30px rgba(147, 51, 234, 0.8); }
+            50% { text-shadow: 0 0 10px #ffffff, 0 0 15px #60a5fa, 0 0 25px #60a5fa, 0 0 40px rgba(147, 51, 234, 1); }
         }
         header p {
             font-size: 1.25rem;
             color: #e5e7eb;
             margin-top: 0.75rem;
-        }
-        @keyframes neonFlicker {
-            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
-            20%, 24%, 55% { opacity: 0.8; }
         }
         .ad-banner {
             text-align: center;
@@ -121,6 +128,10 @@
             color: #d8b4fe;
             animation: neonFlicker 4s infinite;
         }
+        @keyframes neonFlicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+            20%, 24%, 55% { opacity: 0.8; }
+        }
         .section-title p {
             font-size: 1.125rem;
             color: #d1d5db;
@@ -156,40 +167,98 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, transparent, rgba(147, 51, 234, 0.3), transparent);
             opacity: 0;
             transition: opacity 0.3s ease;
         }
         .game-card:hover::before {
             opacity: 1;
-            animation: rotateGlow 2s infinite;
         }
-        @keyframes rotateGlow {
-            0% { transform: translateX(-100%) translateY(-100%); }
-            100% { transform: translateX(100%) translateY(100%); }
+        .coin-master::before {
+            background: linear-gradient(45deg, transparent, rgba(96, 165, 250, 0.3), transparent);
+            animation: waveSpin 2s infinite;
+        }
+        @keyframes waveSpin {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(0deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(360deg); }
+        }
+        .crazy-fox::before {
+            background: linear-gradient(45deg, transparent, rgba(244, 114, 182, 0.3), transparent);
+            animation: foxSparkle 1.5s infinite;
+        }
+        @keyframes foxSparkle {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+        .match-master::before {
+            background: linear-gradient(45deg, transparent, rgba(192, 132, 252, 0.3), transparent);
+            animation: gemPulse 1.8s infinite;
+        }
+        @keyframes gemPulse {
+            0%, 100% { transform: scale(1); opacity: 0; }
+            50% { transform: scale(1.2); opacity: 1; }
         }
         .logo-img {
             height: 7rem;
             width: auto;
             margin: 0 auto 1rem;
             border-radius: 50%;
-            box-shadow: 0 0 10px rgba(147, 51, 234, 0.5);
-            animation: logoGlow 3s ease-in-out infinite;
+            position: relative;
+        }
+        .coin-master .logo-img {
+            box-shadow: 0 0 10px rgba(96, 165, 250, 0.5);
+            animation: coinSpinGlow 3s ease-in-out infinite;
+        }
+        @keyframes coinSpinGlow {
+            0%, 100% { box-shadow: 0 0 10px rgba(96, 165, 250, 0.5); }
+            50% { box-shadow: 0 0 20px rgba(96, 165, 250, 1); }
+        }
+        .crazy-fox .logo-img {
+            box-shadow: 0 0 10px rgba(244, 114, 182, 0.5);
+            animation: foxGlow 2s ease-in-out infinite;
+        }
+        @keyframes foxGlow {
+            0%, 100% { box-shadow: 0 0 10px rgba(244, 114, 182, 0.5); }
+            50% { box-shadow: 0 0 20px rgba(244, 114, 182, 1); }
+        }
+        .match-master .logo-img {
+            box-shadow: 0 0 10px rgba(192, 132, 252, 0.5);
+            animation: gemGlow 2.5s ease-in-out infinite;
+        }
+        @keyframes gemGlow {
+            0%, 100% { box-shadow: 0 0 10px rgba(192, 132, 252, 0.5); }
+            50% { box-shadow: 0 0 20px rgba(192, 132, 252, 1); }
         }
         .game-card h3 {
             font-family: 'Orbitron', sans-serif;
             font-size: 1.5rem;
             margin: 0;
-            animation: neonFlicker 4s infinite;
         }
-        .game-card h3.blue {
+        .coin-master h3 {
             color: #60a5fa;
+            text-shadow: 0 0 5px rgba(96, 165, 250, 0.7);
+            animation: coinTextGlow 2s ease-in-out infinite;
         }
-        .game-card h3.pink {
+        @keyframes coinTextGlow {
+            0%, 100% { text-shadow: 0 0 5px rgba(96, 165, 250, 0.7); }
+            50% { text-shadow: 0 0 10px rgba(96, 165, 250, 1); }
+        }
+        .crazy-fox h3 {
             color: #f472b6;
+            text-shadow: 0 0 5px rgba(244, 114, 182, 0.7);
+            animation: foxTextGlow 1.8s ease-in-out infinite;
         }
-        .game-card h3.purple {
+        @keyframes foxTextGlow {
+            0%, 100% { text-shadow: 0 0 5px rgba(244, 114, 182, 0.7); }
+            50% { text-shadow: 0 0 10px rgba(244, 114, 182, 1); }
+        }
+        .match-master h3 {
             color: #c084fc;
+            text-shadow: 0 0 5px rgba(192, 132, 252, 0.7);
+            animation: gemTextGlow 2.2s ease-in-out infinite;
+        }
+        @keyframes gemTextGlow {
+            0%, 100% { text-shadow: 0 0 5px rgba(192, 132, 252, 0.7); }
+            50% { text-shadow: 0 0 10px rgba(192, 132, 252, 1); }
         }
         .game-card p {
             color: #d1d5db;
@@ -208,26 +277,44 @@
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.02); }
         }
-        .game-button.blue {
+        .coin-master .game-button {
             background: #1e3a8a;
+            box-shadow: 0 0 5px rgba(96, 165, 250, 0.5);
+            animation: coinButtonGlow 2s ease-in-out infinite;
         }
-        .game-button.blue:hover {
+        .coin-master .game-button:hover {
             background: #1e40af;
-            box-shadow: 0 0 15px rgba(236, 72, 153, 0.8);
+            box-shadow: 0 0 15px rgba(96, 165, 250, 0.8);
         }
-        .game-button.pink {
+        @keyframes coinButtonGlow {
+            0%, 100% { box-shadow: 0 0 5px rgba(96, 165, 250, 0.5); }
+            50% { box-shadow: 0 0 10px rgba(96, 165, 250, 1); }
+        }
+        .crazy-fox .game-button {
             background: #be185d;
+            box-shadow: 0 0 5px rgba(244, 114, 182, 0.5);
+            animation: foxButtonGlow 1.8s ease-in-out infinite;
         }
-        .game-button.pink:hover {
+        .crazy-fox .game-button:hover {
             background: #db2777;
-            box-shadow: 0 0 15px rgba(236, 72, 153, 0.8);
+            box-shadow: 0 0 15px rgba(244, 114, 182, 0.8);
         }
-        .game-button.purple {
+        @keyframes foxButtonGlow {
+            0%, 100% { box-shadow: 0 0 5px rgba(244, 114, 182, 0.5); }
+            50% { box-shadow: 0 0 10px rgba(244, 114, 182, 1); }
+        }
+        .match-master .game-button {
             background: #6b21a8;
+            box-shadow: 0 0 5px rgba(192, 132, 252, 0.5);
+            animation: gemButtonGlow 2.2s ease-in-out infinite;
         }
-        .game-button.purple:hover {
+        .match-master .game-button:hover {
             background: #7e22ce;
-            box-shadow: 0 0 15px rgba(236, 72, 153, 0.8);
+            box-shadow: 0 0 15px rgba(192, 132, 252, 0.8);
+        }
+        @keyframes gemButtonGlow {
+            0%, 100% { box-shadow: 0 0 5px rgba(192, 132, 252, 0.5); }
+            50% { box-shadow: 0 0 10px rgba(192, 132, 252, 1); }
         }
         footer {
             background: #111827;
@@ -306,27 +393,27 @@
         <!-- Game List -->
         <div class="game-grid">
             <!-- Coin Master -->
-            <div class="game-card">
+            <div class="game-card coin-master">
                 <img src="https://i.imgur.com/P69QXXY.png" alt="Coin Master Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/150?text=Coin+Master';">
-                <h3 class="blue">Coin Master</h3>
+                <h3>Coin Master</h3>
                 <p>Spin the wheel, build your village, and raid rivals to rule as the ultimate Coin Master!</p>
-                <a href="Coin Master.html" class="game-button blue">Play Coin Master</a>
+                <a href="Coin Master.html" class="game-button">Claim Daily Gifts</a>
             </div>
 
             <!-- Crazy Fox -->
-            <div class="game-card">
+            <div class="game-card crazy-fox">
                 <img src="https://i.imgur.com/i9jxB9a.png" alt="Crazy Fox Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/150?text=Crazy+Fox';">
-                <h3 class="pink">Crazy Fox</h3>
+                <h3>Crazy Fox</h3>
                 <p>Unleash the fun with Crazy Fox! Spin for coins, conquer missions, and win big in events.</p>
-                <a href="Crazy Fox.html" class="game-button pink">Play Crazy Fox</a>
+                <a href="Crazy Fox.html" class="game-button">Claim Daily Gifts</a>
             </div>
 
             <!-- Match Master -->
-            <div class="game-card">
+            <div class="game-card match-master">
                 <img src="https://i.imgur.com/xu0Nnox.png" alt="Match Master Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/150?text=Match+Master';">
-                <h3 class="purple">Match Master</h3>
+                <h3>Match Master</h3>
                 <p>Battle in match-3 showdowns! Use boosters, win trophies, and dominate the leaderboard.</p>
-                <a href="Match Master.html" class="game-button purple">Play Match Master</a>
+                <a href="Match Master.html" class="game-button">Claim Daily Gifts</a>
             </div>
         </div>
     </main>
